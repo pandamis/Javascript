@@ -1,3 +1,6 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+
 <script>
 	
 // User storage
@@ -34,4 +37,10 @@ while (true) {
 }
 users.push(user);
 
+for (var i = 0; i < users.length; i++){
+	console.log('Имя: ' + users[i].firstName + '\n' + 'Фамилия: ' + users[i].lastName + '\n' +
+		       'Дата рождения: ' + users[i].birthDay + '\n' + 'Номер телефона: ' + users[i].phones)
+}
+
 </script>
+</html>
