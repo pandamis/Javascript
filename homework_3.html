@@ -19,5 +19,13 @@ for (var i = 0; i<7; i++){
 
 console.log('\n\n\n');
 
+//	Шахматы
+var str = '';
+	for (var j = 0; j < 8; j++){
+		for (var i=0; i < 8; i++)
+			str += ((i % 2) == (j % 2)) ? ' ' : '#';
+		str += '\n'
+	}
+console.log(str);
 
 </script>
