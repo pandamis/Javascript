@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+
+<script>
+	
+// User storage
+var users = [
+	{
+		firstName: 'Dmitry',
+		lastName: 'Bondarchuk',
+		birthDay: '16.07.1990',
+		phones: [
+			'89001234567',
+			'83431234567'
+		] 
+	},
+	{
+		firstName: 'Ivan',
+		lastName: 'Petrov',
+		birthDay: '08.06.1956',
+		phones: [
+			'89001234567',
+			'83431234567'
+		] 
+	}
+];
+
+var user = {};
+user.firstName = prompt('First Name: ');
+user.lastName = prompt('Last Name: ');
+user.birthDay = prompt('Birthday: ');
+user.phones = [];
+while (true) {
+  var value = +prompt('Phone Number: ');
+  if (!value) break; // (*)
+  user.phones.push(value);
+}
+users.push(user);
+
+for (var i = 0; i < users.length; i++){
+	console.log('Имя: ' + users[i].firstName + '\n' + 'Фамилия: ' + users[i].lastName + '\n' +
+		       'Дата рождения: ' + users[i].birthDay + '\n' + 'Номер телефона: ' + users[i].phones)
+}
+
+</script>
+</html>
