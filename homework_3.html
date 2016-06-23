@@ -1,0 +1,32 @@
+<meta charset="UTF-8">
+<script>
+
+//	Задача из прошлого ДЗ
+var i = 0;
+while (i < 100){
+	var buf = ((i+1) % 3 == 0 ? 'Fizz' : '') + ((i+1) % 5 == 0 ? 'Buzz' : '');
+	console.log( buf == '' ? (i+1) : buf)
+	i ++;
+}
+
+console.log('\n\n\n');
+
+//	Пирамида
+var str = '';
+for (var i = 0; i<7; i++){
+	str += '#'
+	console.log(str);
+}
+
+console.log('\n\n\n');
+
+//	Шахматы
+var str = '';
+	for (var j = 0; j < 8; j++){
+		for (var i=0; i < 8; i++)
+			str += ((i + j) % 2) == 0 ? ' ' : '#';
+		str += '\n'
+	}
+console.log(str);
+
+</script>
