@@ -2,10 +2,11 @@
 <script>
 
 //	Задача из прошлого ДЗ
-for (var i = 0; i < 100; i++) {
-	var str = ((i+1) % 3 == 0) && ((i+1) % 5 == 0) && (str = 'FizzBuzz') || ((i+1) % 3 == 0) &&
-	    (str = 'Fizz') || ((i+1) % 5 == 0) && (str = 'Buzz') || (str = (i+1)) ;
-	console.log(str);
+var i = 0;
+while (i < 100){
+	var buf = ((i+1) % 3 == 0 ? 'Fizz' : '') + ((i+1) % 5 == 0 ? 'Buzz' : '');
+	console.log( buf == '' ? (i+1) : buf)
+	i ++;
 }
 
 console.log('\n\n\n');
@@ -23,7 +24,7 @@ console.log('\n\n\n');
 var str = '';
 	for (var j = 0; j < 8; j++){
 		for (var i=0; i < 8; i++)
-			str += ((i % 2) == (j % 2)) ? ' ' : '#';
+			str += ((i + j) % 2) == 0 ? ' ' : '#';
 		str += '\n'
 	}
 console.log(str);
