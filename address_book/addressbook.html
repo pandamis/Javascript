@@ -47,6 +47,14 @@ function showBook(){
 	}
 }
 
+function makeCsv(){
+	var csv = '';
+	for (var i = 0; i < users.length; i++){
+		csv += (users[i].firstName + ';' + users[i].lastName + ';' +
+			   users[i].birthDay + ';' + users[i].phones.join(',') + '\n')
+	}
+	return csv;
+}
 
 </script>
 </html>
