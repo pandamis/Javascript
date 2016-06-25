@@ -25,21 +25,35 @@ var users = [
 	}
 ];
 
-var user = {};
-user.firstName = prompt('Имя: ', 'Mizgol');
-user.lastName = prompt('Фамилия: ', 'Webmaster');
-user.birthDay = prompt('Дата рождения: ', '12.10.1976');
-user.phones = [];
-while (true) {
-  var value = +prompt('Номер телефона: ');
-  if (!value) break; // (*)
-  user.phones.push(value);
+function addUser(){
+	var user = {};
+	user.firstName = prompt('Имя: ', 'Mizgol');
+	user.lastName = prompt('Фамилия: ', 'Webmaster');
+	user.birthDay = prompt('Дата рождения: ', '12.10.1976');
+	user.phones = [];
+	while (true) {
+	  var value = +prompt('Номер телефона: ');
+	  if (!value) break; // (*)
+	  user.phones.push(value);
+	}
+  users.push(user);
 }
-users.push(user);
 
-for (var i = 0; i < users.length; i++){
-	console.log('Имя: ' + users[i].firstName + '\n' + 'Фамилия: ' + users[i].lastName + '\n' +
-		       'Дата рождения: ' + users[i].birthDay + '\n' + 'Номер телефона: ' + users[i].phones.join(', '))
+function showBook(){
+	for (var i = 0; i < users.length; i++){
+		console.log('Имя: ' + users[i].firstName + '\n' + 'Фамилия: ' +
+								users[i].lastName + '\n' + 'Дата рождения: ' + users[i].birthDay +
+								'\n' + 'Номер телефона: ' + users[i].phones.join(', '))
+	}
+}
+
+function makeCsv(){
+	var csv = '';
+	for (var i = 0; i < users.length; i++){
+		csv += (users[i].firstName + ';' + users[i].lastName + ';' +
+			   users[i].birthDay + ';' + users[i].phones.join(',') + '\n')
+	}
+	return csv;
 }
 
 </script>
