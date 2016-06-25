@@ -26,12 +26,12 @@ var users = [
 ];
 
 var user = {};
-user.firstName = prompt('First Name: ');
-user.lastName = prompt('Last Name: ');
-user.birthDay = prompt('Birthday: ');
+user.firstName = prompt('Имя: ', 'Mizgol');
+user.lastName = prompt('Фамилия: ', 'Webmaster');
+user.birthDay = prompt('Дата рождения: ', '12.10.1976');
 user.phones = [];
 while (true) {
-  var value = +prompt('Phone Number: ');
+  var value = +prompt('Номер телефона: ');
   if (!value) break; // (*)
   user.phones.push(value);
 }
@@ -39,7 +39,7 @@ users.push(user);
 
 for (var i = 0; i < users.length; i++){
 	console.log('Имя: ' + users[i].firstName + '\n' + 'Фамилия: ' + users[i].lastName + '\n' +
-		       'Дата рождения: ' + users[i].birthDay + '\n' + 'Номер телефона: ' + users[i].phones)
+		       'Дата рождения: ' + users[i].birthDay + '\n' + 'Номер телефона: ' + users[i].phones.join(', '))
 }
 
 </script>
