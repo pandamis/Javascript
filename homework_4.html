@@ -21,6 +21,17 @@ function countChar(str, char) {
   return counter;
 }
 
-
+//  3) isEven. 0 - чётное, 1 - нечётное
+function isEven(num) {
+  if (num >= 0) {
+    while (num > 1)
+      num -= 2;
+    return (num == 0);
+  } else {
+    while (num < 0)
+      num += 2;
+    return (num == 0);
+  }
+}
 
 </script>
