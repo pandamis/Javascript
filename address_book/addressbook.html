@@ -2,79 +2,79 @@
 <meta charset="UTF-8">
 
 <script>
-	
+  
 var users = [
-	{
-		id: 1,
-		firstName: 'Dmitry',
-		lastName: 'Bondarchuk',
-		birthDay: '16.07.1990',
-		phones: [
-			'89001234567',
-			'83431234567'
-		],
-	},
-	{
-		id: 2,
-		firstName: 'Ivan',
-		lastName: 'Petrov',
-		birthDay: '08.06.1956',
-		phones: [
-			'89001234567',
-			'83431234567'
-		]
-	}
+  {
+    id: 1,
+    firstName: 'Dmitry',
+    lastName: 'Bondarchuk',
+    birthDay: '16.07.1990',
+    phones: [
+      '89001234567',
+      '83431234567'
+    ],
+  },
+  {
+    id: 2,
+    firstName: 'Ivan',
+    lastName: 'Petrov',
+    birthDay: '08.06.1956',
+    phones: [
+      '89001234567',
+      '83431234567'
+    ]
+  }
 ];
 
 
-//	метод добавления нового пользователя
+//  метод добавления нового пользователя
 var idCount = 2;
 
 function addUser(){
-	idCount ++;
-	var user = {};
-	user.id = idCount;
-	user.firstName = prompt('Имя: ', 'Mizgol');
-	user.lastName = prompt('Фамилия: ', 'Webmaster');
-	user.birthDay = prompt('Дата рождения: ', '12.10.1976');
-	user.phones = [];
-	while (true) {
-	  var value = +prompt('Номер телефона: ');
-	  if (!value) break; // (*)
-	  user.phones.push(value);
-	}
+  idCount ++;
+  var user = {};
+  user.id = idCount;
+  user.firstName = prompt('Имя: ', 'Mizgol');
+  user.lastName = prompt('Фамилия: ', 'Webmaster');
+  user.birthDay = prompt('Дата рождения: ', '12.10.1976');
+  user.phones = [];
+  while (true) {
+    var value = +prompt('Номер телефона: ');
+    if (!value) break; // (*)
+    user.phones.push(value);
+  }
   users.push(user);
 }
 
-//	метод удаления пользователя
+//  метод удаления пользователя
 function deleteUser(){
-	var usersCount = 0;
-	var id = prompt('Введите Id пользователя, которого нужно удалить');
-	users.forEach(function(obj){
-		if (id == obj.id)
-			users.splice(usersCount, 1);
-		usersCount ++;
-	})
+  var usersCount = 0;
+  var id = prompt('Введите Id пользователя, которого нужно удалить');
+  users.forEach(function(obj){
+    if (id == obj.id)
+      users.splice(usersCount, 1);
+    usersCount ++;
+  })
 }
 
-//	показать все данные адресной книги
+//  показать все данные адресной книги
 function showBook(){
-	users.forEach(function(obj){
-		for (var key in obj){
-			console.log(key + ': ' + obj[key])
-		}
-		console.log('--------')
-	})
+  users.forEach(function(obj){
+    for (var key in obj){
+      console.log(key + ': ' + obj[key])
+    }
+    console.log('--------')
+  })
 }
 
-//	метод возвращает все данные адресной книги в формате Csv
+//  метод возвращает все данные адресной книги в формате Csv
 function makeCsv(){
-	var csv = '';
-	for (var i = 0; i < users.length; i++){
-		csv += (users[i].firstName + ';' + users[i].lastName + ';' +
-			   users[i].birthDay + ';' + users[i].phones.join(',') + '\n')
-	}
-	return csv;
+  var csv = '';
+  for (var i = 0; i < users.length; i++){
+    csv += (users[i].firstName + ';' + users[i].lastName + ';' +
+         users[i].birthDay + ';' + users[i].phones.join(',') + '\n')
+  }
+  return csv;
 }
 
 </script>
