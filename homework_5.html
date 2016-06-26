@@ -8,6 +8,7 @@ function colorRGB(red, green, blue){
   return color;
 }
 
+
 //  2) единицы, десятки, сотни
 function splitUp(num){
   var digits = {};
@@ -16,7 +17,7 @@ function splitUp(num){
     console.log('Число не трёхзначное.');
   else if (num < 0)
     console.log('Число отрицательное.');
-  
+
   else{
     var numList = String(num).split('');
     digits.единицы = +numList[numList.length-1];
@@ -31,7 +32,14 @@ function splitUp(num){
   return digits;
 }
 
-//  3)
+
+//  3) objectToQueryString
+function objectToQueryString(object){
+  var str = '';
+  for (key in object)
+    str += key + '=' + object[key] + '&';
+  return str.slice(0, -1);  // не придумал, как не добавлять знак '&' в конец строки
+}
 
 
 </script>
