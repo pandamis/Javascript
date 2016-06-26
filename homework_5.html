@@ -8,6 +8,30 @@ function colorRGB(red, green, blue){
   return color;
 }
 
+//  2) единицы, десятки, сотни
+function splitUp(num){
+  var digits = {};
+
+  if (num > 999)
+    console.log('Число не трёхзначное.');
+  else if (num < 0)
+    console.log('Число отрицательное.');
+  
+  else{
+    var numList = String(num).split('');
+    digits.единицы = +numList[numList.length-1];
+    digits.десятки = +numList[numList.length-2];
+    digits.сотни = +numList[numList.length-3];
+    if (isNaN(digits.десятки))
+      digits.десятки = 0;
+    if (isNaN(digits.сотни))
+      digits.сотни = 0;
+  }
+
+  return digits;
+}
+
+//  3)
 
 
 </script>
