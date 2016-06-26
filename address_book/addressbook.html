@@ -3,30 +3,35 @@
 
 <script>
 	
-// User storage
 var users = [
 	{
+		id: 1,
 		firstName: 'Dmitry',
 		lastName: 'Bondarchuk',
 		birthDay: '16.07.1990',
 		phones: [
 			'89001234567',
 			'83431234567'
-		] 
+		],
 	},
 	{
+		id: 2,
 		firstName: 'Ivan',
 		lastName: 'Petrov',
 		birthDay: '08.06.1956',
 		phones: [
 			'89001234567',
 			'83431234567'
-		] 
+		]
 	}
 ];
 
+var idCount = 2;
+
 function addUser(){
+	idCount ++;
 	var user = {};
+	user.id = idCount;
 	user.firstName = prompt('Имя: ', 'Mizgol');
 	user.lastName = prompt('Фамилия: ', 'Webmaster');
 	user.birthDay = prompt('Дата рождения: ', '12.10.1976');
@@ -39,12 +44,15 @@ function addUser(){
   users.push(user);
 }
 
+
+
 function showBook(){
-	for (var i = 0; i < users.length; i++){
-		console.log('Имя: ' + users[i].firstName + '\n' + 'Фамилия: ' +
-								users[i].lastName + '\n' + 'Дата рождения: ' + users[i].birthDay +
-								'\n' + 'Номер телефона: ' + users[i].phones.join(', '))
-	}
+	users.forEach(function(obj){
+		for (var key in obj){
+			console.log(key + ': ' + obj[key])
+		}
+		console.log('--------')
+	})
 }
 
 function makeCsv(){
