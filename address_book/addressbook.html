@@ -26,6 +26,8 @@ var users = [
 	}
 ];
 
+
+//	метод добавления нового пользователя
 var idCount = 2;
 
 function addUser(){
@@ -44,8 +46,18 @@ function addUser(){
   users.push(user);
 }
 
+//	метод удаления пользователя
+function deleteUser(){
+	var usersCount = 0;
+	var id = prompt('Введите Id пользователя, которого нужно удалить');
+	users.forEach(function(obj){
+		if (id == obj.id)
+			users.splice(usersCount, 1);
+		usersCount ++;
+	})
+}
 
-
+//	показать все данные адресной книги
 function showBook(){
 	users.forEach(function(obj){
 		for (var key in obj){
@@ -55,6 +67,7 @@ function showBook(){
 	})
 }
 
+//	метод возвращает все данные адресной книги в формате Csv
 function makeCsv(){
 	var csv = '';
 	for (var i = 0; i < users.length; i++){
